@@ -77,7 +77,12 @@ class VirtualMin
             ]
         );
 
-        $res = $client->request('GET', $url);
+        try {
+            $res = $client->request('GET', $url);
+        } catch (GuzzleHttp\Exception\RequestException $e) {
+            $this->lastError = $e->getMessage();
+            $this->lastErrorCode = $e->getCode();
+        }
 
         if ($res->getStatusCode() == 200) {
             return json_decode((string)$res->getBody(), true);
@@ -94,8 +99,11 @@ class VirtualMin
      */
     private function validateUrl($url)
     {
-        $parse_url = parse_url($url);
-        if(!isset($parse_url['path'])) $parse_url['path'] = '/';
-        return $url['scheme']."://".$parse_url['host'].$parse_url['path'].'?'.$parse_url['query'].'#'.$parse_url['fragment'];
+        $tmp = substr($url, -1);
+        if($tmp == "/") {
+            return $url;
+        } else {
+            return $url . "/";
+        }
     }
 }
