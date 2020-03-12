@@ -1,0 +1,22 @@
+{
+    "name": "tafoyaventures/virtualminclient",
+	"type": "library",
+	"license": "MIT",
+    "description": "PHP Virtualmin Client Library.",
+	"homepage": "https://github.com/tafoyaventures/VirtualminClient",
+	"authors": [
+		{
+			"name": "Brian Tafoya",
+			"email": "btafoya@tafoyaventures.com",
+			"homepage": "https://tafoyaventures.com",
+			"role": "Developer"
+		}
+	],
+    "require": {
+        "php": ">=7.3.0",
+		"guzzlehttp/guzzle": "^6.5.2"
+	},
+	"autoload": {
+        "classmap": ["src/VirtualMin.inc.php"]
+    }
+}
