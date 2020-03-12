@@ -94,8 +94,8 @@ class VirtualMin
      */
     private function validateUrl($url)
     {
-        $url = parse_url($url);
-        if(!isset($url['path'])) $url['path'] = '/';
-        return $url['scheme']."://".$url['host'].$url['path'].'?'.$url['query'].'#'.$url['fragment'];
+        $parse_url = parse_url($url);
+        if(!isset($parse_url['path'])) $parse_url['path'] = '/';
+        return $url['scheme']."://".$parse_url['host'].$parse_url['path'].'?'.$parse_url['query'].'#'.$parse_url['fragment'];
     }
 }
