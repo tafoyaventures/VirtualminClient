@@ -21,8 +21,4 @@ For more information on composer, visit https://getcomposer.org/doc/00-intro.md.
 
 ### Example
 
-Below is a basic example of how to retrieve and basic list of domains.   
-
-``
-
-`` 
+See the examples directory.   
