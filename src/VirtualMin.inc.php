@@ -67,7 +67,7 @@ class VirtualMin
         $client = new GuzzleHttp\Client(
             [
                 'allow_redirects' => false,
-                'timeout' => 60,
+                'timeout' => 120,
                 'http_errors' => false,
                 'verify' => false,
                 'base_uri' => $this->validateUrl($this->serverUrl),
