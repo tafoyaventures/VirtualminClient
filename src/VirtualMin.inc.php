@@ -82,6 +82,7 @@ class VirtualMin
         } catch (GuzzleHttp\Exception\RequestException $e) {
             $this->lastError = $e->getMessage();
             $this->lastErrorCode = $e->getCode();
+            return false;
         }
 
         if ($res->getStatusCode() == 200) {
