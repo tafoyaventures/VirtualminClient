@@ -16,7 +16,7 @@ class RoboFile extends \Robo\Tasks
         return $nextTag;
     }
 
-    function push($message)
+    function push()
     {
         $this->taskGitStack()
             ->stopOnFail()
