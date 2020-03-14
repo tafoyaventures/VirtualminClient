@@ -6,7 +6,7 @@
  */
 class RoboFile extends \Robo\Tasks
 {
-    private function getnexttag()
+    function getnexttag()
     {
         $cmd = 'git tag --sort=taggerdate | tail -1';
         exec($cmd, $out);
@@ -16,7 +16,7 @@ class RoboFile extends \Robo\Tasks
         return $nextTag;
     }
 
-    public function push($message)
+    function push($message)
     {
         $this->taskGitStack()
             ->stopOnFail()
